@@ -1,0 +1,13 @@
+{% extends 'new.html' %}
+{% load crispy_forms_tags %}
+{% block main_content %}
+<h3>Update Company Information</h3>
+{% if form.instance.pk %}
+    <form method="POST" enctype="multipart/form-data">
+     {{ form|crispy }}
+    {% csrf_token %}
+        <br>
+    <button type="submit" value="submit" class="btn btn-success btn-sm">Save</button>
+    </form>
+{% endif %}
+{% endblock main_content %}

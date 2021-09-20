@@ -1,0 +1,32 @@
+{% extends 'new.html' %}
+{% load crispy_forms_tags %}
+{% block main_content %}
+<center>
+<div class = "container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Item Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Expire Date</th>
+        <th scope="col">Buy Item</th>
+        <th scope="col">Received of Items </th>
+      </tr>
+    </thead>
+    <tbody>
+     {% for product in product_list  %}
+          <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.total_quantity }}</td>
+            <td>{{ product.unit_price }}</td>
+            <td>{{ product.expire_date }}</td>
+            <td><a href="{% url 'medicine:employee_issue_item' pk=product.pk %}" ><input type="submit" value="Buy Item" class="btn btn-secondary" btn type="button"/></a></td>
+            <td><a href="{% url 'medicine:employee_add_to_stock' pk=product.pk %}" ><input type= "submit" value="Received of Items" class="btn btn-secondary btn" type="button"/></a></td>
+          </tr>
+     {% endfor %}
+    </tbody>
+  </table>
+</div>
+</center>
+{% endblock main_content %}

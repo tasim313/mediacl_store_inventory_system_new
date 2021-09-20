@@ -1,0 +1,140 @@
+{% load static %}
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+      <span class="brand-text font-weight-light">Medical Store Inventory System</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="info">
+          <a href="{% url 'App_Login:admin_profile' %}" class="d-block">{{ user.s_name }}</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            {% url 'App_Login:index' as admin_home %}
+            <a href="{{ admin_home }}" class="nav-link {% if request.path == admin_home %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Home
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            {% url 'App_Login:manager' as manager %}
+            <a href="{{ manager }}" class="nav-link {% if request.path == manager %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Manager
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            {% url 'App_Login:employee' as employee %}
+            <a href="{{ employee }}" class="nav-link {% if request.path == employee %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Employee
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+              {% url 'medicine:add_company' as add_company %}
+            <a href="{{ add_company }}" class="nav-link {% if request.path == add_company %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Add Company Information
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            {% url 'medicine:company_view' as view_company %}
+            <a href="{{ view_company }}" class="nav-link {% if request.path == view_company %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Company Information Details
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            {% url 'medicine:admin_search_company' as admin_search_company %}
+             <a href="{{ view_company }}" class="nav-link {% if request.path == view_company %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Search Company Details
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            {% url 'medicine:admin_add_medicine' as add_medicine %}
+            <a href="{{ add_medicine }}" class="nav-link {% if request.path == add_medicine %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Add Medicine
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            {% url 'medicine:admin_medicine_view' as Medicine_View %}
+            <a href="{{ Medicine_View }}" class="nav-link {% if request.path == Medicine_View %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                 Medicine View
+              </p>
+            </a>
+          </li>
+           <li class="nav-item">
+             {% url 'medicine:admin_search_medicine' as search_medicine %}
+            <a href="{{ search_medicine }}" class="nav-link {% if request.path == search_medicine %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Search Medicine
+              </p>
+            </a>
+          </li>
+           <li class="nav-item">
+               {% url 'medicine:admin_view_expire_date' as expire_date_medicine %}
+            <a href="{{ expire_date_medicine }}" class="nav-link {% if request.path == expire_date_medicine %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Expire Date Medicine
+              </p>
+            </a>
+          </li>
+           <li class="nav-item">
+               {% url 'medicine:admin_receipt' as Receipt %}
+            <a href="{{ Receipt }}" class="nav-link {% if request.path == Receipt %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Receipt
+              </p>
+            </a>
+          </li>
+            <li class="nav-item">
+                 {% url 'medicine:admin_all_sales' as sales_receipt %}
+            <a href="{{ sales_receipt }}" class="nav-link {% if request.path == sales_receipt %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Sales Report
+              </p>
+            </a>
+          </li>
+
+
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>

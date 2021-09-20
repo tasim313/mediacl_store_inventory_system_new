@@ -1,0 +1,38 @@
+{% extends 'new.html' %}
+{% block main_content %}
+<center><h1>Employee Details</h1></center>
+<center>
+<div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <p>Total Employee:{{ employee_obj }}</p>
+              </div>
+            </div>
+</div>
+<div class = "container">
+ <table class="table">
+ <thead class="thead-dark">
+    <tr>
+        <th>Employee Name</th>
+        <th>Employee Phone Number</th>
+        <th>Employee Address</th>
+
+    </tr>
+     </thead>
+    <tbody>
+    {% for obj in employee %}
+        <tr>
+            <td>
+                {{ obj.name }}
+            </td>
+            <td>{{ obj.contact }}</td>
+            <td>{{ obj.address }}</td>
+
+        </tr>
+    {% endfor %}
+ </tbody>
+</table>
+</div>
+</center>
+{% endblock main_content %}

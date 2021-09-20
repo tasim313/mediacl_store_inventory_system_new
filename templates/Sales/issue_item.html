@@ -1,0 +1,15 @@
+{% extends 'new.html' %}
+{% load crispy_forms_tags %}
+{% block main_content %}
+<center>
+<div class="container">
+  <form method="POST" action = "">
+    <h1 class = "text-center">SALES FORM</h1><br>
+    {% csrf_token %}
+    {{ sales_form | crispy }}
+      <br><br>
+    <input type = "submit" class="btn btn-secondary btn" type="button">
+  </form>
+</div>
+</center>
+{% endblock main_content %}

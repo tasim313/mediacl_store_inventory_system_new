@@ -1,0 +1,56 @@
+{% extends 'new.html' %}
+{% block main_content %}
+<center>
+<br></br>
+
+<div class = "container">
+<h1 class = "text-center">TOTAL SALES MADE</h1><br>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Total Amount Received</th>
+        <th scope="col">Total Change Given</th>
+        <th scope="col">Net Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>&#2547;{{ total }}</td>
+        <td>&#2547;{{ change }}</td>
+        <td>&#2547;{{ net }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br></br>
+
+<div class = "container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Customer name</th>
+        <th scope="col">Item Bought</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Total Cost</th>
+        <th scope="col">Amount Paid</th>
+        <th scope="col">Change Collected</th>
+      </tr>
+    </thead>
+    {% for sale in sales %}
+    <tbody>
+      <tr>
+        <td>{{ sale.issued_to | title }}</td>
+        <td>{{ sale.item | title }}</td>
+        <td>{{ sale.quantity }}</td>
+        <td>&#2547;{{ sale.unit_price }}</td>
+        <td>&#2547;{{ sale.get_total }}</td>
+        <td>&#2547;{{ sale.amount_received }}</td>
+        <td>&#2547;{{ sale.get_change }}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+</div>
+</center>
+{% endblock main_content %}

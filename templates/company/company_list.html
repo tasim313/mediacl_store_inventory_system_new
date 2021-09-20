@@ -1,0 +1,44 @@
+{% extends 'new.html' %}
+{% block main_content %}
+<center><p>Company Details</p></center>
+<div class="container">
+    <div class="card" style="width: 70rem;">
+      <div class="card-body">
+         <div class = "container">
+         <table class="table">
+         <thead class="thead-dark">
+            <tr>
+                <th>Company Name</th>
+                <th>License Number</th>
+                <th>Company Headquarter Address</th>
+                <th>Company Contact Information</th>
+                <th>Company Email Address</th>
+                <th>Company Description</th>
+                <th>Update or Delete Information</th>
+            </tr>
+         </thead>
+        <tbody>
+            {% for company in company_list %}
+                <tr>
+                    <td>
+                        {{ company.name }}
+                    </td>
+                    <td>{{ company.lic_no }}</td>
+                    <td>{{ company.address }}</td>
+                    <td>{{ company.cont_num }}</td>
+                    <td>{{ company.email }}</td>
+                    <td>{{ company.description }}</td>
+                    <td>
+                        <a href="{% url 'medicine:admin_update_company' pk=company.pk %}">Update</a>
+                        /<a href="{% url 'medicine:admin_delete_company' pk=company.pk %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock main_content %}
+

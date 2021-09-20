@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <a href="{% url 'App_Login:employee_profile' %}"><h2>Profile</h2></a>
+<a href="{% url 'medicine:employee_add_company' %}"><h2>Add Company</h2></a>
+<a href="{% url 'medicine:employee_company_view' %}"><h2>View Company</h2></a>
+<a href="{% url 'medicine:employee_search_company' %}" ><h2>Search view</h2></a>
+<a href="{% url 'medicine:employee_medicine_view' %}"><h2>Medicine View</h2></a>
+<a href="{% url 'medicine:employee_add_medicine' %}"><h2>Add Medicine</h2></a>
+<a href="{% url 'medicine:employee_search_medicine' %}"><h2>Search Medicine</h2></a>
+ <a href="{% url 'medicine:employee_view_expire_date' %}"><h2>Expire Date of Medicine</h2></a>
+<a href="{% url 'App_Login:logout' %}"><h2>Logout</h2></a>
+</body>
+</html>

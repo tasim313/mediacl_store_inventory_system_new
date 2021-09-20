@@ -1,0 +1,55 @@
+{% extends 'new.html' %}
+{% block main_content %}
+<center><p>Medicine Details</p></center>
+<center>
+<div class="container">
+    <div class="card" style="width: 70rem;">
+      <div class="card-body">
+         <div class = "container">
+         <table class="table">
+         <thead class="thead-dark">
+             <tr>
+                <th>Medicine Name</th>
+                <th>Which type of Medicine</th>
+                <th>Medicine Description</th>
+                <th>Buying Price</th>
+                <th>Selling Price</th>
+                <th>Batch No</th>
+                <th>Shelf No or Rack No</th>
+                <th>Manufacture Date</th>
+                <th>Expire Date</th>
+                <th>Combination of Drag Administration Number</th>
+                <th>Manufacturing Licence Number</th>
+                <th>How many pieces of medicine are in stock</th>
+                <th>Update or Delete Information</th>
+            </tr>
+         </thead>
+        <tbody>
+        {% for medicine in medicine_list %}
+                <tr>
+                    <td>{{ medicine.name }}</td>
+                    <td>{{ medicine.m_type }}</td>
+                    <td>{{ medicine.des }}</td>
+                    <td>{{ medicine.buy_price }}</td>
+                    <td>{{ medicine.unit_price }}</td>
+                    <td>{{ medicine.b_no }}</td>
+                    <td>{{ medicine.s_no }}</td>
+                    <td>{{ medicine.mfg_date }}</td>
+                    <td>{{ medicine.expire_date }}</td>
+                    <td>{{ medicine.dar_no }}</td>
+                    <td>{{ medicine.mfg_Lic }}</td>
+                    <td>{{ medicine.total_quantity }}</td>
+                 <td>
+                    <a href="{% url 'medicine:admin_update_medicine' pk=medicine.pk %}">Update</a>
+                    /<a href="{% url 'medicine:admin_delete_medicine' pk=medicine.pk %}">Delete</a>
+                </td>
+              </tr>
+        {% endfor %}
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</center>
+{% endblock main_content %}

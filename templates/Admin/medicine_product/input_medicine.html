@@ -1,0 +1,14 @@
+{% extends 'new.html' %}
+{% load crispy_forms_tags %}
+{% block main_content %}
+<center>
+<center><h1>Insert Medicine Information</h1></center>
+
+<form method="POST" enctype="multipart/form-data">
+      {{ form|crispy }}
+      {% csrf_token %}
+    <br><br>
+    <button type="submit" class="btn btn-success btn-sm">Save</button>
+</form>
+</center>
+{% endblock main_content %}

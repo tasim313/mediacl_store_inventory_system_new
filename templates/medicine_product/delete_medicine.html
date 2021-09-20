@@ -1,0 +1,11 @@
+{% extends 'new.html' %}
+{% block main_content %}
+<center>
+<h3>Delete medicine name:{{medicine.name}}&nbsp;&nbsp; medicine price:{{ medicine.unit_price }}&#2547;&nbsp;&nbsp; company name:{{medicine.company_id.name }}?</h3>
+<form method="POST">
+  {% csrf_token %}
+  <input type="submit" name="submit" value="Delete" class="btn btn-danger btn-sm">
+    <a href="{% url 'medicine:admin_medicine_view' %}" class="btn btn-info btn-sm">Cancel</a>
+</form>
+</center>
+{% endblock main_content %}

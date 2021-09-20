@@ -1,0 +1,42 @@
+{% extends 'new.html' %}
+{% block main_content %}
+<center>
+<form class="form-inline" method="GET">
+            <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search">
+            <button class="btn btn-success" type="submit">Search</button>
+          </form>
+<center>
+{% if search %}
+        <h4> Medicine Details</h4>
+        <div class = "container">
+          <table class="table">
+              <thead class="thead-dark">
+            <tr>
+                <th>Medicine Name</th>
+                <th>Medicine Price</th>
+                <th>Available in stock</th>
+                <th>Batch No</th>
+                <th>Shelf No or Rack No</th>
+                <th>Expire Date</th>
+            </tr>
+             </thead>
+           <tbody>
+            {% for medicine in result %}
+                    <tr>
+                        <td>{{ medicine.name }}</td>
+                        <td>{{ medicine.unit_price }}</td>
+                        <td>{{ medicine.total_quantity }}</td>
+                        <td>{{ medicine.b_no }}</td>
+                        <td>{{ medicine.s_no }}</td>
+                        <td>{{ medicine.expire_date }}</td>
+                    </tr>
+         {% endfor %}
+         </tbody>
+      </table>
+    </div>
+{% else %}
+
+{% endif %}
+</center>
+</center>
+{% endblock main_content %}
